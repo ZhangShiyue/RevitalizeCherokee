@@ -115,14 +115,14 @@ class CommonVoice(datasets.GeneratorBasedBuilder):
             license=_LICENSE,
             citation=_CITATION,
             task_templates=[
-                AutomaticSpeechRecognition(audio_file_path_column="path", transcription_column="sentence")
+                AutomaticSpeechRecognition(audio_column="audio", transcription_column="sentence")
             ],
         )
 
     def _split_generators(self, dl_manager):
         """Returns SplitGenerators."""
         # dl_path = dl_manager.download_and_extract(_DATA_URL.format(self.config.name))
-        dl_path = "/ssd-playpen/home/shiyue/RevitalizeCherokee/chr_voice"
+        dl_path = "/ssd-playpen/home/shiyue/RevitalizeCherokee/ASR/chr_voice"
         abs_path_to_data = os.path.join(dl_path)
         abs_path_to_clips = os.path.join(abs_path_to_data, "clips")
 
